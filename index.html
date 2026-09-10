@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jennifer P. Sing | Enterprise Business Analytics Candidate at NUS </title>
+  <style>
+    :root {
+      --ink: #1e293b;
+      --ink-light: #475569;
+      --accent: #0f4c81;
+      --accent-soft: #f0f7ff;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+
+      /* Badge styles */
+      --badge-blue-bg: #e0f2fe;
+      --badge-blue-text: #0369a1;
+      --badge-yellow-bg: #fef3c7;
+      --badge-yellow-text: #92400e;
+
+      /* Requirements & Info Panels */
+      --req-bg: #fbfbf6;
+      --req-border: #b89344;
+      --req-text: #594411;
+      --panel-bg: #f8fafc;
+      --panel-border: #cbd5e1;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      padding: 24px 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 560px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 20px;
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Header Profile */
+    .profile-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid #ffffff;
+      outline: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      font-family: "Newsreader", Charter, "Georgia", serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    /* Base Pill Badge */
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    .badge-blue {
+      background: var(--badge-blue-bg);
+      color: var(--badge-blue-text);
+    }
+
+    .badge-yellow {
+      background: var(--badge-yellow-bg);
+      color: var(--badge-yellow-text);
+    }
+
+    /* Bio / Tagline */
+    .tagline {
+      font-size: 0.92rem;
+      color: var(--ink-light);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    /* Tactile Buttons */
+    .action-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 10px 6px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn-main {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .btn-sub {
+      background: #f1f5f9;
+      color: var(--ink);
+    }
+
+    /* Amber Requirements Panel */
+    .requirements-panel {
+      background: var(--req-bg);
+      border: 1px solid rgba(184, 147, 68, 0.3);
+      border-left: 4px solid var(--req-border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+
+    .requirements-panel h2 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--req-text);
+      margin-bottom: 8px;
+    }
+
+    .requirements-panel ul {
+      list-style-type: disc;
+      padding-left: 18px;
+      font-size: 0.85rem;
+      color: var(--req-text);
+    }
+
+    .requirements-panel li {
+      margin-bottom: 6px;
+    }
+
+    .requirements-panel li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Sections */
+    .block {
+      margin-bottom: 22px;
+    }
+
+    .block h2 {
+      font-family: "Newsreader", Charter, "Georgia", serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .info-box {
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+
+    .info-box h3 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .info-box p, .info-box li {
+      font-size: 0.86rem;
+      color: var(--ink-light);
+    }
+
+    .info-box ul {
+      padding-left: 18px;
+    }
+
+    .info-box li {
+      margin-bottom: 4px;
+    }
+
+    /* Icon-based list styling */
+    .icon-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .icon-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.87rem;
+      color: var(--ink-light);
+      line-height: 1.45;
+    }
+
+    .icon-wrap {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .icon-wrap svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--accent);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .item-body {
+      flex: 1;
+    }
+
+    .strong-label {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    .footer-note {
+      text-align: center;
+      font-size: 0.76rem;
+      color: #94a3b8;
+      margin-top: 24px;
+      border-top: 1px dashed var(--border);
+      padding-top: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <div class="profile-row">
+      <img src="singjennifer-datascientist.jpg" alt="Jennifer Sing" class="avatar">
+      <div>
+        <h1>Sing Jennifer Pulta</h1>
+        <span class="badge badge-blue">Data Scientist | Enterprise Analytics</span> <br>
+	+65 8840 0730 | sing.jenniferp@gmail.com
+      </div>
+    </div>
+
+    <!-- Tagline with Pill Badges -->
+    <p class="tagline">
+      Master’s student in Enterprise Business Analytics at the National University of Singapore - Institute of Systems Science (NUS-ISS), ASEAN Merit Scholar. Skilled in predictive modeling, data visualization, and business analytics.<div style="display: flex; justify-content: center; margin-top: 10px;">
+  <span class="badge badge-yellow" style="text-align: center; white-space: normal; line-height: 1.4; padding: 6px 12px 10px 10px; margin-bottom: 10px;">
+    Seeking an internship (15 Mar – 06 Aug 2027) or future full-time opportunities in data science and analytics (August 2027 onwards)
+  </span>
+</div>
+    </p>
+
+
+
+    <!-- Quick Action CTAs -->
+    <div class="action-row">
+      <a href="resume.pdf" class="btn btn-main" target="_blank">View Resume</a>
+      <a href="https://www.linkedin.com/in/jennifer-p-sing/" class="btn btn-sub" target="_blank">LinkedIn</a>
+      <a href="mailto:sing.jenniferp@gmail.com" class="btn btn-sub">Email</a>
+    </div>
+
+    <!-- Target Focus -->
+    <div class="info-box">
+      <h3>Target Areas</h3>
+     <p>Interested in applying analytics to solve real-world problems across the <strong>public sector, education, healthcare, sustainability, supply chain, and customer intelligence</strong>.</p>
+    </div>
+
+    <!-- Internship Requirements (per NUS-ISS) -->
+    <div class="requirements-panel">
+      <h2>Internship Requirements (per NUS-ISS)</h2>
+      <ul>
+        <li><strong>Commitment:</strong> Full-time (15 Mar – 06 Aug 2027, 20 weeks, 5 days/week) Hybrid/On-site</li>
+        <li><strong>Scope:</strong> Project must include &ge;50% predictive or prescriptive modeling (e.g., forecasting, optimization, segmentation).</li>
+        <li><strong>Data Access & NDAs:</strong> Program guidelines require utilizing company data for academic grading (open to sign an NDA). To protect company privacy, raw data is never published externally, and all sensitive metrics can be fully masked or anonymised in my reports.</li>
+        <li><strong>Company Supervisor:</strong> A designated industry mentor (work email must not be generic i.e @gmail.com ) to provide performance feedback.</li>
+      </ul>
+    </div>
+
+    <!-- What I'm Looking For -->
+    <div class="block">
+      <h2>What I’m Looking For</h2>
+      <ul class="icon-list">
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">Target Roles:</span> Data science, advanced analytics, AI/ML, and business intelligence.
+          </div>
+        </li>
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">Key Techniques:</span> Forecasting, customer segmentation, resource optimization, and Generative AI/LLM applications.
+          </div>
+        </li>
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">Business Value:</span> Direct impact on driving revenue, optimizing operational costs, and mitigating business risk.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Experience Highlights -->
+    <div class="block">
+      <h2>Experience Highlights</h2>
+      <ul class="icon-list">
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">Software Engineering (4 yrs):</span> Built eCommerce backends, enterprise CMS, and payroll systems (Java, SQL, Python).
+          </div>
+        </li>
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">Analytics & Marketing (5+ yrs):</span> Scaled performance marketing, managed multi-channel campaigns, and reduced CPR/CPC by 50%.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Honors & Recognition -->
+    <div class="block">
+      <h2>Honors & Recognition</h2>
+      <ul class="icon-list">
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">ASEAN Merit Scholar:</span> National University of Singapore
+          </div>
+        </li>
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><path d="M10.4 10.4 6.4 17.6M13.6 13.6l4-7.2"></path></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">DOST-SEI Merit Scholar:</span> Science & Technology Scholar (Philippines)
+          </div>
+        </li>
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">Google Anita Borg Memorial Scholarship:</span> Finalist (2010)
+          </div>
+        </li>
+        <li class="icon-item">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M6 9H4a2 2 0 0 1-2-2V5h4M18 9h2a2 2 0 0 0 2-2V5h-4"></path><path d="M4 5h16v6a6 6 0 0 1-12 0V5z"></path><line x1="12" y1="17" x2="12" y2="21"></line><line x1="8" y1="21" x2="16" y2="21"></line></svg>
+          </div>
+          <div class="item-body">
+            <span class="strong-label">Teknobiz Idea Challenge:</span> 1st Place (Mobile Innovation Category)
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-note">
+      Connect via LinkedIn or reach out directly at +65 8840 0730
+    </div>
+  </div>
+
+</body>
+</html>
