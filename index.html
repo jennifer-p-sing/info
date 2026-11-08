@@ -276,6 +276,26 @@
       border-top: 1px dashed var(--border);
       padding-top: 14px;
     }
+
+    /* Featured GitHub projects */
+    .project-grid { display: grid; grid-template-columns: 1fr; gap: 11px; }
+    .project-card { display: block; padding: 15px; border: 1px solid var(--border); border-radius: 11px; background: #fff; text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    /* Soft, individually tinted cards with accessible contrast */
+    .project-card:nth-child(1) { background: #f0f7ff; border-color: #cddff5; --project-color: #245a92; --project-tag-bg: #dcecff; }
+    .project-card:nth-child(2) { background: #f0faf5; border-color: #cce9d9; --project-color: #216b50; --project-tag-bg: #dcf3e6; }
+    .project-card:nth-child(3) { background: #fff8ef; border-color: #f0dfc5; --project-color: #916024; --project-tag-bg: #ffedd4; }
+    .project-card:nth-child(4) { background: #f8f3ff; border-color: #e3d7f5; --project-color: #70509c; --project-tag-bg: #ebe0fa; }
+    .project-card:hover, .project-card:focus-visible { border-color: var(--project-color); box-shadow: 0 6px 20px rgba(15,76,129,.09); transform: translateY(-2px); outline-offset: 2px; }
+    .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .project-title { font-size: .93rem; font-weight: 700; color: var(--ink); line-height: 1.35; }
+    .project-arrow { color: var(--project-color, var(--accent)); font-size: 1.1rem; flex-shrink: 0; }
+    .project-desc { font-size: .83rem; color: var(--ink-light); margin-top: 6px; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+    .project-tag { background: var(--project-tag-bg, var(--accent-soft)); color: var(--project-color, var(--accent)); border-radius: 5px; padding: 3px 7px; font-size: .71rem; font-weight: 600; }
+    .project-intro { color: var(--ink-light); font-size: .85rem; margin-bottom: 12px; }
+    .project-footer { margin-top: 12px; font-size: .82rem; }
+    .project-footer a { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .project-footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -293,12 +313,11 @@
 
     <!-- Tagline with Pill Badges -->
     <p class="tagline">
-      Master’s student in Enterprise Business Analytics at the National University of Singapore - Institute of Systems Science (NUS-ISS), ASEAN Merit Scholar. Skilled in predictive modeling, data visualization, and business analytics.<div style="display: flex; justify-content: center; margin-top: 10px;">
+      Master’s student in Enterprise Business Analytics at the National University of Singapore - Institute of Systems Science (NUS-ISS), ASEAN Merit Scholar. Skilled in predictive modeling, data visualization, and business analytics.</p><div style="display: flex; justify-content: center; margin-top: 10px;">
   <span class="badge badge-yellow" style="text-align: center; white-space: normal; line-height: 1.4; padding: 6px 12px 10px 10px; margin-bottom: 10px;">
     Seeking an internship (15 Mar – 06 Aug 2027) or future full-time opportunities in data science and analytics (August 2027 onwards)
   </span>
 </div>
-    </p>
 
 
 
@@ -356,6 +375,36 @@
         </li>
       </ul>
     </div>
+
+
+    <!-- Featured GitHub repositories: replace jennifer-p-sing in all links -->
+    <section class="block" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Featured Data &amp; ML Projects</h2>
+      <p class="project-intro">Selected repositories demonstrating predictive modeling, statistical analysis, and practical analytics workflows. Click a project to explore its code and documentation.</p>
+      <div class="project-grid">
+        <a class="project-card" href="https://github.com/jennifer-p-sing/fdic-bank-efficiency-prediction" target="_blank" rel="noopener noreferrer" aria-label="View FDIC Bank Efficiency Prediction repository on GitHub">
+          <div class="project-top"><span class="project-title">🏦 U.S. Bank Efficiency Prediction</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+          <p class="project-desc">Forecasting next-year bank operating efficiency using FDIC financial data. Compares four regression models, explains drivers with SHAP, and includes a local XGBoost inference simulator.</p>
+          <div class="project-tags"><span class="project-tag">XGBoost</span><span class="project-tag">Machine Learning</span><span class="project-tag">SHAP</span></div>
+        </a>
+        <a class="project-card" href="https://github.com/jennifer-p-sing/capital-bikeshare-mlflow" target="_blank" rel="noopener noreferrer" aria-label="View Capital Bikeshare MLflow repository on GitHub">
+          <div class="project-top"><span class="project-title">🚲 Capital Bikeshare Demand Forecasting</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+          <p class="project-desc">Daily bikeshare demand forecasting project exploring experiment tracking and reproducible model development with MLflow.</p>
+          <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">MLflow</span><span class="project-tag">Forecasting</span></div>
+        </a>
+        <a class="project-card" href="https://github.com/jennifer-p-sing/nyc-congestion-relief-analysis" target="_blank" rel="noopener noreferrer" aria-label="View NYC Congestion Relief Analysis repository on GitHub">
+          <div class="project-top"><span class="project-title">🚕 NYC Congestion Relief Analysis</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+          <p class="project-desc">Econometric and data-driven analysis of New York City's congestion pricing using regression modeling and statistical inference.</p>
+          <div class="project-tags"><span class="project-tag">Econometrics</span><span class="project-tag">Regression</span><span class="project-tag">Urban Mobility</span></div>
+        </a>
+        <a class="project-card" href="https://github.com/jennifer-p-sing/singapore-mortality-trends-analysis" target="_blank" rel="noopener noreferrer" aria-label="View Singapore Mortality Trends Analysis repository on GitHub">
+          <div class="project-top"><span class="project-title">📈 Singapore Mortality Trends Analysis</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+          <p class="project-desc">Exploring Singapore's mortality trends from 1976–2022 and their relationship to demographic change, public health, and major events.</p>
+          <div class="project-tags"><span class="project-tag">Data Analysis</span><span class="project-tag">Public Health</span><span class="project-tag">Trends</span></div>
+        </a>
+      </div>
+      <p class="project-footer">More work and source code available on <a href="https://github.com/jennifer-p-sing" target="_blank" rel="noopener noreferrer">my GitHub profile ↗</a></p>
+    </section>
 
     <!-- Experience Highlights -->
     <div class="block">
