@@ -296,11 +296,35 @@
     .project-footer { margin-top: 12px; font-size: .82rem; }
     .project-footer a { color: var(--accent); font-weight: 600; text-decoration: none; }
     .project-footer a:hover { text-decoration: underline; }
+
+    /* Compact featured innovation card */
+    .resili-hero { display: grid; grid-template-columns: 170px minmax(0,1fr); overflow: hidden; border-radius: 13px; margin: -7px -1px 25px; background: linear-gradient(120deg,#061d32,#07534d); color: #fff; border: 1px solid #146c69; }
+    .resili-visual { display: flex; align-items: center; justify-content: center; background: #031b2d; min-height: 178px; overflow: hidden; }
+    .resili-visual img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    .resili-hero-info { padding: 16px 16px 15px; min-width: 0; }
+    .resili-eyebrow { font-size: .65rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; color: #a7f3d0; margin-bottom: 5px; }
+    .resili-name { color: #fff; font-size: 1.16rem; line-height: 1.2; font-weight: 750; margin-bottom: 6px; }
+    .resili-hero-info p { font-size: .78rem; line-height: 1.5; color: #e0f2fe; margin-bottom: 10px; }
+    .resili-link { display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border-radius: 7px; background: #d1fae5; color: #064e3b; font-size: .76rem; font-weight: 700; text-decoration: none; }
+    .resili-link:hover, .resili-link:focus-visible { background: #a7f3d0; }
+    @media (max-width: 430px) { .resili-hero { grid-template-columns: 120px minmax(0,1fr); } .resili-visual { min-height: 170px; } .resili-hero-info { padding: 12px; } .resili-name { font-size: 1rem; } .resili-hero-info p { font-size: .73rem; } }
   </style>
 </head>
 <body>
 
   <div class="wrapper">
+
+    <!-- Featured project: ResiliRoute (compact landscape card) -->
+    <section class="resili-hero" aria-label="Featured ResiliRoute innovation project">
+      <div class="resili-visual"><img src="resiliroute-logo-crop.png" alt="ResiliRoute logo: safer, smarter commutes through extreme weather"></div>
+      <div class="resili-hero-info">
+        <div class="resili-eyebrow">Featured innovation project</div>
+        <div class="resili-name">ResiliRoute</div>
+        <p>Predictive flood-aware routing with vehicle-specific travel guidance to help commuters avoid potentially inundated roads.</p>
+        <a class="resili-link" href="https://drive.google.com/file/d/1nOdxkWAjfOEdVTpszi4kg01A7O8zPO1n/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Explore project ↗</a>
+      </div>
+    </section>
+
     <!-- Header -->
     <div class="profile-row">
       <img src="singjennifer-datascientist.jpg" alt="Jennifer Sing" class="avatar">
